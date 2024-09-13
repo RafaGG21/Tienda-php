@@ -17,9 +17,9 @@ class ProductController{
         if(isset($_GET['id'])){
             $id = $_GET['id'];
 
-            $producto = new Product();
-            $producto->setId($id);
-            $pro = $producto->getOne();
+            $product = new Product();
+            $product->setId($id);
+            $product = $product->getOne();
         }
         require_once 'views/product/detail.php';
     }

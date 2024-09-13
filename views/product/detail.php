@@ -1,15 +1,15 @@
-<?php if(isset($pro)): ?>
-    <h1><?= $pro->nombre?></h1>
+<?php if(isset($product)): ?>
+    <h1><?= $product->nombre?></h1>
     <div id="detail-product">
         <div class="image">
-        <?php if($pro->imagen != null): ?>
-                <img  src="<?=base_url ?>uploads/images/<?=$pro->imagen?>" />
+        <?php if($product->imagen != null): ?>
+                <img  src="<?=base_url ?>uploads/images/<?=$product->imagen?>" />
             <?php endif; ?>
         </div>
         <div class="data">
-            <p class="description"><?= $pro->descripcion?></p>
-            <p class="price"><?= $pro->precio?> €</p>
-            <a href="" class="button" style="width: 120px;">Comprar</a>
+            <p class="description"><?= $product->descripcion?></p>
+            <p class="price"><?= $product->precio?> €</p>
+            <a href="<?= base_url?>cart/add&id=<?=$product->id?>" class="button" style="width: 120px; margin: 0 auto;">Comprar</a>
         </div>
     </div>
 <?php else: ?>
