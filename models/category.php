@@ -1,6 +1,6 @@
 <?php
 
-class Categoria {
+class Category {
     private $id;
     private $nombre;
 
@@ -36,7 +36,7 @@ class Categoria {
         $this->db = Database::connect(); 
     }
 
-    public function getCategorias() {
+    public function getCategories() {
         $sql = "SELECT * FROM categorias";
         return $this->db->query($sql);
     }

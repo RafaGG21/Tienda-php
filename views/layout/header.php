@@ -19,11 +19,11 @@
                 <li>
                     <a href="">Inicio</a>
                 </li>
-                <?php  $categorias = Utils::getCategorias(); ?>
+                <?php  $categories = Utils::getCategories(); ?>
                
-                <?php while ($categoria = $categorias->fetch_object()): ?>
+                <?php while ($category = $categories->fetch_object()): ?>
                     <li>
-                     <a href="<?= base_url ?>producto/getProductosPorCategoria&categoria=<?= $categoria->nombre?>"><?= $categoria->nombre?></a> 
+                     <a href="<?= base_url ?>product/getProductsByCategory&category=<?= $category->nombre?>"><?= $category->nombre?></a> 
                     </li>
                 <?php endwhile; ?>
             </ul>

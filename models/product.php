@@ -1,6 +1,6 @@
 <?php
 
-class Producto {
+class Product {
     private $id;
     private $categoria_id;
     private $nombre;
@@ -159,7 +159,7 @@ class Producto {
 		return $this;
 	}
 
-    public function getTodosProductos(){
+    public function getAll(){
         $sql = "SELECT * FROM productos";
         return $this->db->query($sql);
     }
@@ -169,9 +169,9 @@ class Producto {
 		return $producto->fetch_object();
 	}
 
-    public function getProductosPorCategoria($categoria){
+    public function getProductsByCategory($category){
         $sql = "SELECT * FROM productos WHERE categoria_id IN (
-            SELECT c.id FROM categorias c WHERE c.nombre = '{$categoria}'
+            SELECT c.id FROM categorias c WHERE c.nombre = '{$category}'
         )";
         return $this->db->query($sql);
     }

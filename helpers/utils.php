@@ -9,9 +9,9 @@ class Utils {
         }
     }
 
-    public static function getCategorias() {
-        require_once 'models/categoria.php';
-        $categoria = new Categoria();
-        return $categoria->getCategorias();
+    public static function getCategories() {
+        require_once 'models/category.php';
+        $categories = new Category();
+        return $categories->getCategories();
     }
 }

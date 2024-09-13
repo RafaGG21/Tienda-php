@@ -8,17 +8,17 @@
 <?php Utils::deleteSession('register'); ?>
 
 <form action="<?=base_url?>usuario/save" method="post">
-    <label for="nombre">Nombre</label>
-    <input type="text" name="nombre" />
+    <label for="name">Nombre</label>
+    <input type="text" name="name" />
 
-    <label for="apellidos">Apellidos</label>
-    <input type="text" name="apellidos" />
+    <label for="surname">Apellidos</label>
+    <input type="text" name="surname" />
 
     <label for="email">Email</label>
     <input type="email" name="email" />
 
-    <label for="contra">Password</label>
-    <input type="password" name="contra" />
+    <label for="pass">Password</label>
+    <input type="password" name="pass" />
     
     <input type="submit" value="Enviar" />
 

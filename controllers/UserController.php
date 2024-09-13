@@ -1,20 +1,20 @@
 <?php
 
-require_once 'models/usuario.php';
-class UsuarioController{
+require_once 'models/user.php';
+class UserController{
 
     public function registro(){
-        require_once 'views/usuario/registro.php';
+        require_once 'views/user/register.php';
     }
 
     public function save(){
         if(isset($_POST)){
-            $usuario = new Usuario();
-            $usuario->setNombre($_POST['nombre']);
-            $usuario->setApellidos($_POST['apellidos']);
-            $usuario->setEmail($_POST['email']);
-            $usuario->setPassword($_POST['contra']);
-            $save = $usuario->save();
+            $user = new User();
+            $user->setNombre($_POST['name']);
+            $user->setApellidos($_POST['surname']);
+            $user->setEmail($_POST['email']);
+            $user->setPassword($_POST['pass']);
+            $save = $user->save();
 
             if ($save) {
                 $_SESSION['register'] = 'completed';
@@ -25,15 +25,15 @@ class UsuarioController{
             $_SESSION['register'] = 'failed';
         }
 
-        header('Location:'.base_url.'usuario/registro');
+        header('Location:'.base_url.'user/register');
     }
 
     public function login(){
         if(isset($_POST)){
-            $usuario = new Usuario();
-            $usuario->setEmail($_POST['email']);
-            $usuario->setPassword($_POST['contra']);
-            $identity = $usuario->login();
+            $user = new User();
+            $user->setEmail($_POST['email']);
+            $user->setPassword($_POST['pass']);
+            $identity = $user->login();
 
             if ($identity) {
                 $_SESSION['identity'] = $identity;
